@@ -1,8 +1,9 @@
 #Script to estimate the model parameters using a linear approximation
 
-#library(dplyr)
-
-growth_data <- read.csv("experiment.csv")
+library(dplyr)
+library(here)
+here()
+growth_data <- read.csv(here("data", "experiment.csv"))
 
 #Case 1. K >> N0, t is small
 
@@ -17,3 +18,8 @@ data_subset2 <- growth_data %>% filter(t>1800)
 
 model2 <- lm(N ~ 1, data_subset2)
 summary(model2)
+
+
+sink(file = "package-versions.txt")
+sessionInfo()
+sink()
