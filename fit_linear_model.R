@@ -2,6 +2,7 @@
 
 library(dplyr)
 library(here)
+library (ggplot2)
 here()
 growth_data <- read.csv(here("data", "experiment.csv"))
 
@@ -18,8 +19,3 @@ data_subset2 <- growth_data %>% filter(t>1800)
 
 model2 <- lm(N ~ 1, data_subset2)
 summary(model2)
-
-
-sink(file = "package-versions.txt")
-sessionInfo()
-sink()
