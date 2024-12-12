@@ -1,5 +1,5 @@
 ##Question 1
-Question 1. We use the dataset experiment.csv which contains t, the time in seconds and N, the observed population size. 
+We use the dataset experiment.csv which contains t, the time in seconds and N, the observed population size. 
 We looked at the data in two different phases. Firstly, the early growth phase where t is small and the carrying capacity K is much  greater than the initial population size N0 
 This model helps us to estimate the intrinsic growth rate as the growth should not be limited by approaching the carrying capacity. 
 Secondly we looked at the carrying capacity phase as the population is approaching its limit, to estimate the carrying capacity, we estimate K as the mean population size during this stable phase.
