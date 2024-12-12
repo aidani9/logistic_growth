@@ -12,3 +12,5 @@ include estimates
 Using my estimates of N0 and r, I used the code "N_question2 <- N0 * exp(r * 4980)" to find that with exponential population growth at time 4980 is 2.290345x10^24. This is orders of magnitude larger than our estimate of 5.903e+10 with the logistic growth curve, because in the logistic growth model the population is limited by our carrying capacity K whereas with exponential growth there is no limt to the increase whatsoever
 
 ##Question 3 
+![Exponential Vs logistic growth](https://github.com/user-attachments/assets/c35b2f89-3a22-4be3-8600-4de08ccdf3d8)
+
