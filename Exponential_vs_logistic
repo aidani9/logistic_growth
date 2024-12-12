@@ -1,0 +1,35 @@
+#script to compare exponential growth model to our logistic growth model 
+#library(ggplot2)
+N0 <- 879  
+r <- 0.009902  
+K <- 5.903e10  
+time <- seq(0, 5000, by = 10) 
+
+
+# Exponential growth function
+exponential_growth <- function(t) {
+  N0 * exp(r * t)
+}
+
+# Logistic growth function
+logistic_fun <- function(t) {
+  
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  
+  return(N)
+  
+}
+
+# Generate data for plotting
+growth_data <- data.frame(
+  time = time,
+  Exponential = exponential_growth(time),
+  Logistic = logistic_fun(time)
+)
+ggplot() +
+  geom_line(data = growth_data, aes(x = time, y = Exponential, color = "Exponential"), size = 1.5) +
+  geom_line(data = growth_data, aes(x = time, y = Logistic, color = "Logistic"), size = 1.5) +
+  labs(title = "Exponential vs logistic growth",
+       x = "Time", y = "Population") +
+  scale_color_manual(values = c("Exponential" = "blue", "Logistic" = "red")) +
+  theme_minimal() + scale_y_log10() 
